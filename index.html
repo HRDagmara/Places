@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+	<meta charset="utf-8">
+	<title>Places</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="vendor/normalize.css">
+	<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<button class="button button--restart">Start</button>
+	<div class="main-carousel" id="carousel"></div>
+	<div class="progress-bar"></div>
+	<div id="map"></div>
+	<script id="template-list-places" type="x-tmpl-mustache">
+		<div class="carousel-cell" id="carousel-cell{{index}}">
+			<div class="container" style="background-image: url( {{image}} )">
+			  <h2> {{title}} </h2>
+			  {{{description}}}
+			</div>
+		  </div>
+	</script>
+	<script>
+		var slides = [
+			{
+				image: 'images/Barcelona.jpg',
+				title: 'Barcelona',
+				description: '',
+				index: 1,
+				coords: { lat: 41.384950, lng: 2.164549 },
+				marker: ''
+			},
+			{
+				image: 'images/Toskania.jpg',
+				title: 'Siena',
+				description: '',
+				index: 2,
+				coords: { lat: 43.321680, lng: 11.328683 },
+				marker: null
+			},
+			{
+				image: 'images/fiordy.jpg',
+				title: 'Hardangerfjord',
+				description: '',
+				index: 3,
+				coords: { lat: 60.238792, lng: 6.057598 },
+				marker: null
+			},
+			{
+				image: 'images/Kopenhaga.jpg',
+				title: 'Kopenhaga',
+				description: '',
+				index: 4,
+				coords: { lat: 55.675112, lng: 12.566361 },
+				marker: null
+			},
+			{
+				image: 'images/Londyn.jpg',
+				title: 'Londyn',
+				description: '',
+				index: 5,
+				coords: { lat: 51.532303, lng: -0.126308 },
+				marker: null
+			},
+		];
+	</script>
+	<script src="vendor/flickity.pkgd.min.js"></script>
+	<script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
+	<script src="vendor/mustache.js"></script>
+
+
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2gPTImegtYolVrTXY8kz-CixMVsI7Ewg&callback=initMap"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
